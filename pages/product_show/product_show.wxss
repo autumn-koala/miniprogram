@@ -1,0 +1,58 @@
+swiper{
+  height: 892rpx;
+}
+swiper .slide-image{
+  width: 670rpx;
+  height: 100%;
+  padding: 0 40rpx;
+}
+
+/* 商品信息 */
+.info{
+  padding: 0 40rpx;
+}
+.info .name{
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+.info .star_code{
+  font-size: 24rpx;
+  color: #777;
+}
+.info .star_code .star{
+  margin-top: 8rpx;
+}
+.info .star_code .code{
+  margin-top: 8rpx;
+}
+.info .price{
+  display: flex;
+  align-items: flex-end;
+}
+.price .price_now{
+  font-size: 50rpx;
+  color: #c00;
+  margin-right: 20rpx;
+}
+.price .price_before{
+  font-size: 24rpx;
+  color: #24292e;
+  text-decoration: line-through;
+}
+
+
+/* 添加购物车 */
+.cart{
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  display: flex;
+}
+
+.add{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAEzElEQVRYR83Ya4hUZRgH8P/zzuxFvO2uO3PGyg/VVuRGbelezk3WgvJDIEEIXdAgKM0og0ASIosiKCqKSIJAutFFAglEupF6LrNKa0LadlE/BOqcWbdZRTSdmfeJc9ZZhm1n5+zsnNzz5XDmnPd5f/PM+zznzCHM8o1KvuE+8w6OyblCyuPt6fSJ2eIOgJmeFddSXB4DUXDMzIdJ0nplwHKuNHQM1NHRlFUWfwlGO4OXE1EjM18AZE/KdQ9fSeT4T1xCeL29CscbPiPQSmbem3Lt/lkF9DHDuj5fQuTALATxNQnHOXmlkP/JYAmS0cwDROgWjHsTrrVr1gE9zdwOwiNgbFZc6zUf6OlGGqC+KLAMXCTmIcG0KZG29pbmqJhBT9WfhRCvA/yR4tjrAqBmuiCoUQDHYzLn40XqWrTf+tX/rCIwqxqrWNBugAcVx14eKepycE83twFYD5bbFNd5YkrgSPeKJYVG/ouZL6Vcu+l/AarGWgj6EMwfK669dkpg0MB18xwBc0F8vWLbx6NGZnXzLQY2gflFxbW3VgWWioIhV6cc5+uogZ5m/AyiLlHklYkBe09VYEY3PiDQowRsSTrWq1ECs53983hh4SyIiknv1Dw6evRiCKD5DAFvAvhUcayHowRmNHM1EXZOvHtVrOKxtqLdDYp9A+ZDimvfHiVwsvVXNYPDun6VhDjhV7Li2nMIkFEhJ1t/VYHllUwFujG5f9+fUQArrb9QQE83bIB0SNynpK2dUQArrb9wQM14H0SPMfPzKdd+OQpgpfUXCpjVjKeY6G1mfJ5yrQeiAFZaf6GAGdW8iwS+B+MXxbVurTfw72XLFuab5uQm9r/SPFO2Gf+ibHd3ihubT0VVyRm91Gt5h+LYayYmoCowqGTNGCGitpgs3NyeTv9WjyxmVbVDivjTxLwRRFJA9iUc56eagJ5m7gVhBRj3K671lR+EATHa1b8Azf+05IlaSYgWCbSSpBYmtBIQ7AFqYb587J8ntDDQRsDYExJznoDHk669fbIvHiqDnqa/BxIbALygONZLWcMwWGJf6W9qLRll4DSx3AHwG4rrHqsUIxQwqxobWdC7wNg6yWjanUSxHwCcA2MUQA7gURAFe2bkCAj2QvCoBHKCY6OS87mGQsNo8bzIJY/sORfmi4UCDvcZ/TJGPzJjKOVaS8MErtc1oYAjvb0L8vFGj4DmWJGWtg/sG6oXoFqcUMDgyUY3PwHwkF/UkNiQvHR+Fw0O5qtNMNPzoYFnVLXtgogfImDJTCedYnxRFNGTGLAOhm7U5cHO9vQsOt/QtJUYqwC+DkSinlj/ZgDIZeXvg0JnsJ6Q6cQKDcyo+oMgeo4IVzPw3VxBT863rOHpTBbcOlW1g0XsHYBMgH9nSZtTactvWZNuoYDDun6TZBqa0Jhr+p8y8e2E/5qv8eKFxW2Dg2dqvpNkdX0NQ3xRHoDBR1KOfct0M+jppl/58fJxosDLE/vtwdqB469BykIwXMW19GkDNSMDIqV8HMnCDcl0+mjNQO7sbPRaWg8SqDMIwiwBWqe4lt8bp7VldHMLAa+MD2J8q7jWPTNag4Gpo6PpdGJxH5gJEicTB+w/piUru9gzjNtEAa0cRyFh2w4FD0czKJJaIfUY9y/ucCFHdjKcLwAAAABJRU5ErkJggg==') no-repeat center / 40rpx auto;
+}

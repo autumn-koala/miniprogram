@@ -1,0 +1,54 @@
+/* pages/add_address/add_address.wxss */
+/* pages/addressAdd/addressAdd.wxss */
+
+.add_information {
+  min-height: 88rpx;
+  padding: 24rpx 20rpx 24rpx 150rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #999;
+  position: relative;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.add_label {
+}
+
+.add_label text {
+  width: 130rpx;
+  line-height: 1;
+  position: absolute;
+  top: 39rpx;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.add_label view{
+  height:53rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 53rpx;
+}
+
+.address_label{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.address_label_one{
+  margin: 10rpx 20rpx 10rpx 0;
+  border: 1rpx solid #e5e5e5;
+  padding: 0 20rpx;
+  max-width: 300rpx;
+  overflow: hidden;
+}
+.btn{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+}

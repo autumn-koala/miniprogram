@@ -1,0 +1,19 @@
+<!--pages/address/address.wxml-->
+<block>
+  <view class='address_bar'>
+    <view class='address_box'>
+      <block>
+        <view wx:if="{{active}}" class='checked'></view>
+        <view wx:else class='check'></view>
+      </block>
+      <view class='contact'>
+        <view class='name'>史锞锞</view>
+        <view class='phone'>152****0997</view>
+      </view>
+      <view class='address'>山西省太原市小店区高新技术开发区平阳路学府街凯通大厦</view>
+    </view>
+  </view>
+</block>
+<navigator url="/pages/add_address/add_address">
+  <view class="add_address">新增收货地址</view>
+</navigator>

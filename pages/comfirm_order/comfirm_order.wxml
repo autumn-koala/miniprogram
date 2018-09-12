@@ -1,0 +1,77 @@
+<!--pages/comfirm_order/comfirm_order.wxml-->
+<wxs src="../../wxs/tools.wxs" module="tools" />
+
+<block>
+  <navigator wx:if="{{address}}" url="/pages/address/address" class="address_bar">
+    <view class='address_box'>
+      <view class='contact'>
+        <view class='name'>史锞锞</view>
+        <view class='phone'>152****0997</view>
+      </view>
+      <view class='address'>山西省太原市小店区高新技术开发区平阳路学府街凯通大厦</view>
+    </view>
+  </navigator>
+  <navigator wx:else url="/pages/address/address" class="address_bar">
+    <view class='address_box add_address_box'>
+      <view class='add_address'>添加收货地址</view>
+    </view>
+  </navigator>
+</block>
+<!-- 商品信息 -->
+<block>
+
+  <view class='product_box'>
+    <view class='product_info' wx:for="{{products}}" wx:key="{{index}}">
+      <navigator url="/pages/product_show/product_show?id={{item.item_id}}">
+        <view class='image' style="background:url('{{item.img_url}}') no-repeat center top / 100% auto"></view>
+      </navigator>
+      <view class='product_detail'>
+        <view class='name'>{{item.name}}</view>
+        <view class='sku'>
+          <view class='color sku_info'>黑色</view>
+          <view class='size sku_info'>L</view>
+        </view>
+        <view class='price_num'>
+          <view class='price'>￥
+            <view class='int'>{{tools.formatPrice(item.product_price).int}}</view>
+            <view class="decimal">{{tools.formatPrice(item.product_price).decimal}}</view>
+          </view>
+          <view class='num'>
+            <button wx:if="{{item.qty <= '1'}}" class='minus_disable btn'>-</button>
+            <button wx:else class='minus btn' data-type="less_one" data-item_id="{{item.item_id}}" bindtap="update">-</button>
+            <input class='num' value="{{item.qty}}"></input>
+            <button class='add btn' data-type="add_one" data-item_id="{{item.item_id}}" bindtap="update">+</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+<!-- 价格小计 -->
+<view class='total'>
+  <view class='total_item'>
+    <view class='total_item_text'>商品金额</view>
+    <view class='total_item_price'>￥ 22.00</view>
+  </view>
+  <view class='total_item'>
+    <view class='total_item_text'>运费</view>
+    <view class='total_item_price'>+￥ 0.00</view>
+  </view>
+  <view class='total_item'>
+    <view class='total_item_text'>折扣</view>
+    <view class='total_item_price'>-￥ 0.00</view>
+  </view>
+  <view class='total_item'>
+    <view class='total_item_text'>总计</view>
+    <view class='total_item_price'>￥ 22.00</view>
+  </view>
+</view>
+
+<!-- 支付按钮 -->
+<navigator url="/pages/order/order" open-type='reLaunch'>
+  <view class='pay_btn'>
+    <button class="btn" type="warn">货到付款</button>
+  </view>
+</navigator>

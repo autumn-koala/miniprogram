@@ -1,0 +1,27 @@
+/* component/loading/loading.wxss */
+.loading{
+  width: 52rpx;
+  height: 52rpx;
+  background: #fff url(https://www.apple.com/ac/globalnav/4/zh_CN/assets/ac-store/spinner.svg) no-repeat center / 100% 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 999;
+  display: none;
+}
+.loading.active{
+  display: block;
+  animation: rotate .8s ease infinite;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg)
+  }
+  100%{
+    transform: rotateZ(360deg)
+  }
+}

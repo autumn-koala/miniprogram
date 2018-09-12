@@ -1,0 +1,43 @@
+<!--pages/add_address/add_address.wxml-->
+
+<!--pages/addressAdd/addressAdd.wxml-->
+<view class='addBox'>
+  <view class="add_information add_name">
+    <view class='add_label'>
+      <text>收货人</text>
+      <input placeholder="姓名" />
+    </view>
+  </view>
+  <view class="add_information add_phone">
+    <view class='add_label'>
+      <text>联系方式</text>
+      <input placeholder="手机号"></input>
+    </view>
+  </view>
+  <view class="add_information add_loaction">
+    <view class='add_label'>
+      <text>所在地区</text>
+      <view></view>
+    </view>
+  </view>
+  <view class="add_information add_address">
+    <view class='add_label'>
+      <text>详细地址</text>
+      <input placeholder="详细地址需填写楼栋楼层或房间号信息"></input>
+    </view>
+  </view>
+  <view class="add_information add_label">
+    <view class='add_label'>
+      <text>地址标签</text>
+      <view class="address_label">
+        <view class="address_label_one">公司</view>
+        <view class="address_label_one">家</view>
+        <view class="address_label_one">学校</view>
+        <view class="address_label_one">自定义</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button type="warn">确认</button>
+  </view>
+</view>

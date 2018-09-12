@@ -1,0 +1,44 @@
+<!--pages/order/order.wxml-->
+<view class="decoration"></view>
+
+<block loadind="{{loading}}">
+  <block wx:if="{{order}}">
+    <view class='order_list'>
+      <view class='order_item'>
+        <view class='number_del'>
+          <view class='order_number'>订单号：
+            <view class='order_number_text'>12345678798</view>
+          </view>
+          <view class='del'></view>
+        </view>
+        <view class='order_state'>
+          <view class='left'>
+            <view class='state'>状态：<text> 已付款</text></view>
+            <view class='total'>总价：<text> ￥188.00</text></view>
+          </view>
+          <view class='right'>
+            <button type="warn" size="mini">再次购买</button>
+          </view>
+        </view>
+        <view class='order_content'>
+          <view class='image' style="background:url('/images/123.jpg') no-repeat center top / 100% auto"></view>
+          <view class='content_info'>
+            <view class='info_name'>华为（HUAWEI）原装耳机 三键线控 带麦克风 半入耳式耳机 原装手机耳机</view>
+            <view class='color_type'>
+              <view class='info_color'>白色</view>
+              <view class='info_type'>至尊版</view>
+            </view>
+            <view class='info_number'>1件</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 订单为空 -->
+  <block wx:else>
+    <view class='oeder_list order_list_empty'>
+      <view class='order_empty'></view>
+      <view class='notice'>还没有订单哦，快去逛逛吧！</view>
+    </view>
+  </block>
+</block>

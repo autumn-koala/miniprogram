@@ -1,0 +1,37 @@
+<!--component/nav/nav.wxml-->
+<view class="navBox  {{open ? 'open' : ''}}">
+  <view class="nav">
+      <view bindtap='toggle' class="btn">
+        <view class='i'>快速导航</view> 
+      </view>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/index.png)"></view>
+        <view class='text'>首页</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/search.png)"></view>
+        <view class='text'>搜索</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/personal.png)"></view>
+        <view class='text'>个人中心</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/collextion.png)"></view>
+        <view class='text'>收藏</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/history.png)"></view>
+        <view class='text'>最近浏览</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/feedback.png)"></view>
+        <view class='text'>用户反馈</view>
+      </navigator>
+      <navigator url="" class='guid'>
+        <view class='icon' style="background:url('/images/order.png)"></view>
+        <view class='text'>订单详情</view>
+      </navigator>
+    
+  </view>
+</view>

@@ -1,0 +1,31 @@
+<loading loading="{{loading}}"></loading>
+
+<swiper indicator-dots='true'>
+  <block wx:for="{{product.image_detail}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='info'>
+  <view class='name'>{{product.name}}</view>
+  <view class='star_code'>
+    <view class='star'>平均评分:</view>
+  <view class='code'>产品编码:{{product.sku}}</view>
+  </view>
+  <view class='price'>
+    <view class='price_now'>{{product.price_info.special_price.value}}</view>
+    <view class='price_before'>{{product.price_info.price.value}}</view>
+  </view>
+</view>
+
+<view class='color_select'>
+  <block wx:for="{{product.options.image}}" wx:key="{{index}}">
+    <image src='{{item.image}}' class='thumb-image'></image>
+  </block>
+</view>
+<view class='cart'>
+  <button type='warn' bindtap='addcart' size='mini'>加入购物车</button>
+  <navigator url="/pages/cart/cart"  open-type="reLaunch" class='add'></navigator>
+</view>

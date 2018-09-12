@@ -1,0 +1,96 @@
+/* pages/address/address.wxss */
+.address_bar{
+  height: 182rpx;
+  padding: 24rpx 20rpx 32rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+.address_bar::after{
+  content: "";
+  position: absolute;
+  height: 2rpx;
+  background: #f7f7f7;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 -20rpx;
+}
+.address_box{
+  height: 100%;
+  padding: 0 60rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #666;
+}
+.address_box::after{
+  content: "";
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADe0lEQVRYR+3WT2gcVRwH8O/37RbyR1APLYZ6SKCiF0GKf6jUtlQKtrWIiGlP0Yt6arzMvNnEggtSM3kTN5decikVrOC2WJDWP1BKY6G3IgiKgpCbraViKJSl2Z33kwezsKTZ7GxmdskhcxqYN/P7zO+93/s9YpNf3OQ+bAGzzlDfMlipVHY2Go1ARHYC+DIIgu/S4PsCjKLoFRH5EcATTZSIzARBMN0J2XOgw1lrr5J8DMAigGsi8ilJBeATrfXn6yF7ClyFOzs6Ovrh+Ph4HIbhYZLfkhyw1r5ZKpWutEP2DGiM2S0ii0nmICJngiA42YQYY04B+AzAZa31sb4CE9w1ko8DuAHgVQAFETkVBMHparVaWFpa+onk6yLiCub9vgFbcSJyvlarTQwPD79lra2SLAL4CMBBAMcB1JRSuz3P+6MvwLVw5XLZuuBhGB5VSl0CsC3BPABwWGvtMtz2ym0NrsJdrNVqx5s4F71cLheHhoZuAngJwH2l1EHP8271ZZsJw/B5kjfcmhORi2NjYydctbbseYyi6BsA7wJYJrnf9/1fO+Hc88wZTHCuWp9cC+eCGGOOALgiIv8WCoV9nuf9ngaXGZgG54JEUTQsIqfjOD4zNTX1V1pcJmAaXBRFO3zfv9sNaPXYDU3x3Nzcc3Ec31xvWmdnZ78geVIptSdNMeS2zSS4n0lub1cQxpgFkh+IyH/W2pe7ndZWbFcZTIOLougcgAmHE5HXSqXSb32Z4jQ4Y8zXJE/khUtdJJ1wSW/9Km9cKuDMzMwupZQriO3JVO1rbU9Jh6gCeDvPzDWXxbprcH5+fmRlZeUWyREX3FWta/Akj/i+f31hYWHb8vLyJZJHe4HrmEFjTATAA3ChWCy+V6/XLzgMgIfW2ndIfkzyUK9waYA/AHgDwDGt9eXW6Wzps7lU64b2QWPMLwBeUEq92NxsHXJwcHCJ5NMA7llrD2TdSjZ83DLG3AbwVBzHzxSLxTiO4xGl1ERy6LwnInuDIPgzyz7X6d22RSIi7ojkjkyPjBGRv92puNe4ddega/Qi8k/yh7G7J3kHwPcDAwPR5OTk/U5/n8fzthmsVCqDjUbj2Xq9fnt6evouSckjYLff6KoXd/vxPMZvAbNmsW0GjTHXAezPGiDl+4ta6wNrjd0swKta60NdAVP+ec+HbRVJ1hRv+gz+D/CiAEdN6RGHAAAAAElFTkSuQmCC) no-repeat center center /100% auto;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -10rpx;
+}
+.address_box .check{
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid #999;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  vertical-align: middle;
+  margin-top: -20rpx;
+}
+.address_box .checked{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  vertical-align: middle;
+  margin-top: -20rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAnUExURUxpceo8Pe08Qes8PvJGRuo8Peo7Puo8Pek7Pus8P+o8Pek9Qek7PVZdAmAAAAAMdFJOUwDsKYAPqFDZ03K/O5NuavMAAADzSURBVCjPY2CAAM2oQvGlkxiQAYvFGTBodkASMzwDBcII0cQzcCAGE2M+gwQMoJpjkAWPQgxgPYMCAsCCNqiCh0FibGfQQAJQ0BFdUARTN1g/iwy64EEHVEfCnMqBwpfOARINDDooOhX2AMlDDHOQBYWYQDacZIhBUagI9inDGgyFZ04x1GAoPHOcQQZD4ZmDSIIwhUBBkPZjG5EVArWDLDoN4sIVAi2KgWmEKwQ6aQ5UJ0Ih0PE6UDsQCoHe5IC6BqEQGCDMUOcgFAKDDhrI0huRAxlrdGCPOKxRjDUxYE82WBMY1qSIPdFiT95YMwJ6lgEA1v7F4kBpeXoAAAAASUVORK5CYII=) no-repeat 50% / 42rpx;
+}
+
+.address_box .contact{
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact .name{
+  font-weight: 700;
+  margin-right: 5rpx;
+}
+
+.address_box .adress{
+  font-size: 28rpx;
+}
+
+
+
+
+
+
+
+
+.add_address{
+  width: 100%;
+  height: 92rpx;
+  color: #fff;
+  background: #e4393c;
+  line-height: 92rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

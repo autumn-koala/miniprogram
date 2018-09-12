@@ -1,0 +1,20 @@
+/* component/wait/wait.wxss */
+.wait{
+  width:40rpx;
+  height: 40rpx;
+  background: url('https://www.apple.com/ac/globalnav/4/zh_CN/assets/ac-store/spinner.svg') no-repeat center / 100% 100%;
+  margin: 5rpx auto;
+  display: none;
+}
+.wait.active{
+  display: block;
+  animation: rotate .5s ease infinite;
+}
+@keyframes rotate{
+  0%{
+    transform: rotateZ(0deg)
+  }
+  100%{
+    transform: rotateZ(360deg)
+  }
+}

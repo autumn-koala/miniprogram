@@ -1,0 +1,49 @@
+var selectAll = function(products) {
+  return products.every(function(v) {
+    return v.active == 1
+  })
+}
+//***********  格式化价格  */
+var formatPrice = function(price) {
+  var arr = ('' + price).split('.');
+    return {
+    int: arr[0],
+    decimal: arr[1]
+  }
+}
+
+var deleteGoods = function(products) {
+  var id = '';
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].active === 1) {
+      id = products[i].item_id;
+    }
+  }
+  return id;
+}
+//*************  计算总价   */
+var total = function(products) {
+  var num = 0;
+  for (var i = 0; i < products.length; i++) {
+    var v = products[i];
+    num += v.product_price * v.qty;
+  }
+  return num.toFixed(2);
+}
+//**************  计算选中商品的总数  */
+var selectTotal = function(selectProducts) {
+  var num = 0;
+  for (var i = 0; i < selectProducts.length; i++) {
+    var v = selectProducts[i];
+    num += v.qty *1;
+  }
+  return num;
+}
+
+module.exports = {
+  selectAll: selectAll,
+  formatPrice: formatPrice,
+  total: total,
+  deleteGoods: deleteGoods,
+  selectTotal: selectTotal
+}

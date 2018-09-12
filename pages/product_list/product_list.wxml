@@ -1,0 +1,50 @@
+<view class="decoration"></view>
+
+<swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" indicator-color="blue">
+  <block wx:for="{{bigimg}}">
+    <swiper-item>
+      <view class="slide-image" style='background:url("http:{{item.imgUrl}}")no-repeat center center/100% auto'></view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='picter'>
+  <block wx:for="{{smallimg}}">
+    <view class='box' style='background:url("http:{{item.imgUrl}}")no-repeat center center/100% auto'></view>
+  </block>
+</view>
+
+
+<!-- <nav></nav> -->
+<loading loading="{{loading}}"></loading>
+<view class='list'>
+  <block wx:for="{{products}}" wx:key="{{index}}">
+    <view class='ul'>
+      <navigator url='/pages/product_show/product_show?id={{item.one._id}}'>
+      <view class='li'>
+        <view class='image' style="background:url('http:{{item.one.image}}') no-repeat center / cover"></view>
+        <view class='info'>
+          <view class='product_name'>{{item.one.name}}</view>
+          <view class='product_price'>
+            <view class='price_now'>{{item.one.special_price.value}}</view>
+            <view class='price_before'>{{item.one.price.value}}</view>
+          </view>
+        </view>
+      </view>
+      </navigator>
+      <navigator url='/pages/product_show/product_show?id={{item.two._id}}'>
+        <view class='li'>
+          <view class='image' style="background:url('http:{{item.two.image}}') no-repeat center / cover"></view>
+          <view class='info'>
+            <view class='product_name'>{{item.two.name}}</view>
+            <view class='product_price'>
+              <view class='price_now'>{{item.two.special_price.value}}</view>
+              <view class='price_before'>{{item.two.price.value}}</view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      
+    </view>
+  </block>
+  <wait wait="{{wait}}"/>
+</view>

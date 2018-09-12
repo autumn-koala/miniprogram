@@ -1,0 +1,175 @@
+<!--pages/cart/cart.wxml-->
+<wxs src="../../wxs/tools.wxs" module="tools" />
+<view class="decoration"></view>
+
+<!-- <nav></nav> -->
+<loading loading="{{loading}}" />
+<block wx:if="{{!loading}}">
+  <block wx:if="{{products}}" >
+    <!-- 地址 -->
+    <view class="address_bar">
+      <view class="left">
+        朝阳区三环到四环
+      </view>
+      <block>
+        <view wx:if="{{!edit}}" class="right">
+          <view class='share'>分享</view>
+          <view class='edit' bindtap="edit">编辑商品</view>
+        </view>
+        <view wx:else class="right">
+          <!-- <view class='share'>分享</view> -->
+          <view class='edit' bindtap="edit">完成</view>
+        </view>
+       </block> 
+    </view>
+    <!-- 商家 -->
+    <view class='store'>
+      <!-- 商家信息 -->
+      <!-- <view class='shop_head'>
+        <view class='left'>
+          <view class='check'></view>
+          <icon class='icon'></icon>
+          <view class='shop_name'>
+            三只松鼠旗舰店
+          </view>
+        </view>
+        <view class='right'>
+          <view class='coupons'>优惠券</view>
+        </view>
+      </view> -->
+      <!-- 商品内容 -->
+      <view class='item_content'>
+        <view class='item_head'>
+          <view class='left'>
+            <view class='activity'>满减</view>
+            <view class='detail'>已购满48元，已减4元</view>
+          </view>
+          <view class='right'>
+            <view class='more'>查看活动</view>
+          </view>
+        </view>
+        <!-- 商品信息 -->
+        <view class='goods'  wx:for="{{products}}" wx:key="{{index}}">
+          <view bindtap="selectOne" data-active="{{item.active}}" data-item_id="{{item.item_id}}" class='icon_select'>
+            <view wx:if="{{item.active}}" class="checked"></view>
+            <view wx:else class="check"></view>
+          </view>
+          <view class="image" style="background:url('{{item.img_url}}') no-repeat center / cover"></view>
+          <view class='lower_price'>
+            <view>闪购中</view>
+            <view>16小时后结束</view>
+          </view>
+          <view class='info'>
+            <view class='name'>{{item.name}}</view>
+            <view class='line'>
+              <view class='price'>
+                <view class='price_now'>￥
+                  <view class='int'>{{tools.formatPrice(item.product_price).int}}</view> .{{tools.formatPrice(item.product_price).decimal}}
+                </view>
+                <!-- <view class='price_before'>￥
+                  <text class='int'>90</text> .00
+                </view> -->
+              </view>
+              <view class='num'>
+                <button wx:if="{{item.qty <= '1'}}" class='minus_disable btn'>-</button>
+                <button data-type="less_one" data-item_id="{{item.item_id}}" bindtap="update" wx:else class='minus btn'>-</button>
+                <input class='number' value="{{item.qty}}"></input>
+                <button data-type="add_one" data-item_id="{{item.item_id}}" bindtap="update" class='plus btn'>+</button>
+              </view>
+            </view>
+          </view>
+          <!-- 促销活动 -->
+          <view class='promotion'>
+            <view class='content'>
+              <text class='promo_laber'>促销</text>
+              <view class='right'>
+                <view class='reduce'>满48元减4元</view>
+                <view class='select'>2个可选
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+      <!-- 底部 -->
+    <block>
+      <view wx:if="{{edit}}" class='tab'>
+        <view class='select' bindtap='selectAll' data-active="{{tools.selectAll(products)}}">
+          <view wx:if="{{tools.selectAll(products)}}" class="checked"></view>
+          <view wx:else class='check'></view>
+          <view class='both'>全选</view>
+        </view>
+        <view class='options'>
+          <view class='left'>移至收藏</view>
+          <view class='del' bindtap="update" data-type="remove" data-item_id="{{tools.deleteGoods(products)}}">删除</view>
+        </view>
+      </view>
+      <view wx:else class='tab'>
+        <view class='select' bindtap='selectAll' data-active="{{tools.selectAll(products)}}">
+          <view wx:if="{{tools.selectAll(products)}}" class="checked"></view>
+          <view wx:else class='check'></view>
+          <view class='both'>全选</view>
+        </view>
+        <view class='account'>
+          <view class='left'>
+            <view class='top'>总计:
+              <text class='total'>￥{{tools.total(selectProducts)}}</text>
+            </view>
+            <view class='bottom'>
+              总额¥{{tools.total(selectProducts)}} 立减¥0.00 
+            </view>
+          </view>
+          <block>
+            <view wx:if="{{!selectProducts.length}}" class='pay'>去结算
+              <view class='count'>(0件)</view>
+            </view>
+            <navigator wx:else url="/pages/comfirm_order/comfirm_order" class="pay active">去结算
+              <view class='count'>({{tools.selectTotal(selectProducts)}}件)</view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+       
+    </block>
+  </block>
+  <block wx:else>
+    <view class='cart_empty'></view>
+    <view class='notice'>购物车空空如也，去逛逛吧！</view>
+  </block>
+</block>
+
+
+
+
+<!-- 更多列表 -->
+<!-- <block>
+  <view class='recommend'>
+    <view class='tick'>
+      <view class='title'>
+        可能你还想要
+      </view>
+    </view>
+  </view>
+  <view class='items_list'>
+    <view class='items_content' wx:for="{{recList}}" wx:key="{{index}}">
+      <view class='image' style="background:#eee url('{{item.img}}') no-repeat center / cover"></view>
+      <view class='items_info'>
+        <view class='items_name'>{{item.name}}</view>
+        <view class='price_cart'>
+          <view class='items_price'>{{item.price}}</view>
+          <view class='cart'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block> -->
+
+
+
+
+
+
+
